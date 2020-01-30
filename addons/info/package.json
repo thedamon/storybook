@@ -47,7 +47,9 @@
     "react-test-renderer": "^16.8.3"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*",
+    "regenerator-runtime": "*"
   },
   "publishConfig": {
     "access": "public"
