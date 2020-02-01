@@ -41,12 +41,15 @@ function testStorySnapshots(options: StoryshotsOptions = {}) {
     testMethod,
     integrityOptions,
     snapshotSerializers,
+    storyParam,
   } = ensureOptionsDefaults(options);
   const testMethodParams = {
     renderTree,
     renderShallowTree,
     stories2snapsConverter,
   };
+
+  // const parameterScope =
 
   const data = storybook
     .raw()
@@ -58,7 +61,7 @@ function testStorySnapshots(options: StoryshotsOptions = {}) {
         const existing = acc.find((i: any) => i.kind === kind);
         const { fileName } = item.parameters;
 
-        if (!isDisabled(parameters.storyshots)) {
+        if (!isDisabled(parameters[storyParam])) {
           if (existing) {
             existing.children.push({ ...item, render, fileName });
           } else {
