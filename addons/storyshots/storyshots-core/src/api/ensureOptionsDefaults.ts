@@ -34,6 +34,7 @@ function ensureOptionsDefaults(options: StoryshotsOptions) {
     renderer,
     serializer,
     snapshotSerializers,
+    storyParam = 'storyshots',
     stories2snapsConverter = defaultStories2SnapsConverter,
     test: testMethod = snapshotWithOptions({ renderer, serializer }),
   } = options;
@@ -48,6 +49,7 @@ function ensureOptionsDefaults(options: StoryshotsOptions) {
     stories2snapsConverter,
     testMethod,
     snapshotSerializers,
+    storyParam,
     integrityOptions,
   };
 }
